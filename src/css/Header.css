@@ -1,0 +1,161 @@
+
+.header-container {
+  width: 100%;
+  background: #131a26;
+  padding: 10px 0;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+.header-nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.header-title {
+  color: #4da3ff;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+ 
+}
+
+
+
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: #d7dbe0;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: #4da3ff;
+}
+
+.logout-text {
+  color: #ff6b6b;
+  font-size: 15px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.logout-text:hover {
+  color: #ff4a4a;
+}
+
+.header-profile {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.logout-popup,
+.profile-edit-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.logout-popup div,
+.profile-edit-container div {
+  margin-right: 20px;
+  border: 1px solid rgba(255, 233, 34, 0.411);
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.profile-view-container {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #131a26;
+}
+.profile-view-card {
+  width: 80%;
+  max-width: 300px;
+ 
+}
+.profile-view {
+  width: 90%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.edit-title {
+  color: white;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .header-nav {
+    padding: 0 10px;
+  }
+
+  .header-title {
+    font-size: 18px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-link,
+  .logout-text {
+    font-size: 13px;
+  }
+
+  .header-profile {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .header-nav {
+    padding: 0 8px;
+  }
+
+  .header-title {
+    font-size: 8px;
+    margin-right: 5px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-link,
+  .logout-text {
+    font-size: 12px;
+  }
+
+  .header-profile {
+    width: 30px;
+    height: 30px;
+  }
+}
