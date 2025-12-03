@@ -97,8 +97,12 @@
 }
 .profile-view {
   width: 90%;
-  height: auto;
+  height: 50%;
   margin-top: 20px;
+  border-radius: 50%;
+ object-fit: contain;
+ border: 2px solid gold;
+ background-color: #406675;
 }
 
 .edit-title {

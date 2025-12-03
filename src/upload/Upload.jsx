@@ -3,7 +3,7 @@ import Notification from "../components/Notification";
 import "../css/Upload.css";
 import Loader from "../components/Loader";
 
-export default function Upload({ fun }) {
+export default function Upload({ fun, setIsUpload }) {
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState("");
   const [popup, setPopup] = useState("");
@@ -33,10 +33,12 @@ export default function Upload({ fun }) {
         setPopup("Uploaded ✔");
         fun();
         setIsLoading(false);
+        setIsUpload(false);
       })
       .catch(() => {
         setPopup("Upload failed ❌");
         setIsLoading(false);
+        setIsUpload(false);
       });
   }
 

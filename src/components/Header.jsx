@@ -2,15 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "../css/Header.css";
 import Upload from "../upload/Upload";
-import { PiDotsThreeOutlineVerticalBold } from "react-icons/pi";
-import { FaWindowClose } from "react-icons/fa";
 
 function Header({ setRefresh }) {
   const navigation = useNavigate();
   const [response, setResponse] = useState("");
   const [isLogout, setIsLogout] = useState(false);
-  const [isprofile, setIsProfile] = useState(false);
   const [profileView, setProfileView] = useState(false);
+  const [isUpload, setIsUpload] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -34,8 +32,6 @@ function Header({ setRefresh }) {
     }
     fetchData();
   }, [setRefresh]);
-
-  const Icon = isprofile ? FaWindowClose : PiDotsThreeOutlineVerticalBold;
 
   const DefaultImg =
     response?.gender === "male"
@@ -89,24 +85,23 @@ function Header({ setRefresh }) {
                 <div
                   style={{ background: "#131a26" }}
                   className="header-profile"
-                  onClick={() => setProfileView((e) => !e)}
+                  onClick={() => {
+                    setProfileView((e) => !e);
+                  }}
                 ></div>
               )}
             </li>
-
-            <Icon onClick={() => setIsProfile((e) => !e)} color="white" />
           </ul>
         </nav>
       </header>
 
       {response && (
-        <div style={{background:"#131a26"}}>
-         <center>
-
-        <span className="welcome-title">
-          <span style={{ color: "white" }}>Welcome</span> {response?.name} ❤
-        </span>
-         </center>
+        <div style={{ background: "#131a26" }}>
+          <center>
+            <span className="welcome-title">
+              <span style={{ color: "white" }}>Welcome</span> {response?.name} ❤
+            </span>
+          </center>
         </div>
       )}
 
@@ -129,12 +124,16 @@ function Header({ setRefresh }) {
         </div>
       )}
 
-      {isprofile && (
+      {isUpload && (
         <div
           className="profile-edit-container"
           style={{ background: "#131a26" }}
         >
+          <div>
+          <button  style={{ color: "red" ,background:"black"}} onClick={() => setIsUpload((e) => !e)}>close </button>
           <Upload fun={setRefresh} />
+
+          </div>
         </div>
       )}
 
@@ -158,6 +157,15 @@ function Header({ setRefresh }) {
                 }
                 alt="profile-img"
               />
+              <button>Remove Profile</button>
+              <button
+                onClick={() => {
+                  setIsUpload(true);
+                  setProfileView(false);
+                }}
+              >
+                Upload
+              </button>
             </div>
           </div>
         ))}
