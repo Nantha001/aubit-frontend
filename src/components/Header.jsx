@@ -152,6 +152,7 @@ function Header({ setRefresh }) {
         ) : (
           <div className="profile-view-container">
             <div className="profile-view-card">
+              <button onClick={()=>(setProfileView(e=>!e))} style={{color:"red"}}>X</button>
               <img
                 className="profile-view"
                 src={
