@@ -14,7 +14,7 @@ function Header({ setRefresh }) {
 
   useEffect(() => {
     async function fetchData() {
-      const api = "https://aubit-server.onrender.com/userdata";
+      const api = "https://aubit-backend.onrender.com/userdata";
       const option = {
         method: "GET",
         headers: {

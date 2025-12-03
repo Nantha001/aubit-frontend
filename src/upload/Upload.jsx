@@ -20,7 +20,7 @@ export default function Upload({ fun }) {
     const formData = new FormData();
     formData.append("image", image);
 
-    fetch("https://aubit-server.onrender.com/upload", {
+    fetch("https://aubit-backend.onrender.com/upload", {
       method: "POST",
       headers: { Authorization: `Bearer ${localStorage.getItem("jwtToken")}` },
       body: formData,

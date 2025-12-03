@@ -51,7 +51,7 @@ export default function UpcomingBirthday() {
     async function fetchData() {
       try {
         setIsLoading(true);
-        const apiUrl = "https://aubit-server.onrender.com/userdata";
+        const apiUrl = "https://aubit-backend.onrender.com/userdata";
         const option = {
           method: "GET",
           headers: {

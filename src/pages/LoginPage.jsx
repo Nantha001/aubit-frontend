@@ -51,7 +51,7 @@ function LoginPage() {
       setErr((pre) => ({ ...pre, passwordErr: "Enter the Password" }));
       return;
     }
-    const apiUrl = "https://aubit-server.onrender.com/login";
+    const apiUrl = "https://aubit-backend.onrender.com/login";
     const body = { regNo: registerInput, password: password };
     const option = {
       method: "POST",

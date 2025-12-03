@@ -117,7 +117,7 @@ function SignupPage() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     };
-    const res = await fetch("https://aubit-server.onrender.com/signup", option);
+    const res = await fetch("https://aubit-backend.onrender.com/signup", option);
     const data = await res.json();
 
     if (res.ok) {
