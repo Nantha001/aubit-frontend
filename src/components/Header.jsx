@@ -46,9 +46,7 @@ function Header({ setRefresh }) {
     <>
       <header className="header-container">
         <nav className="header-nav">
-          <span className="header-title">
-            <span style={{ color: "white" }}>Welcome</span>  {response?.name}
-          </span>
+          <div></div>
 
           <ul className="nav-links">
             <li>
@@ -101,8 +99,19 @@ function Header({ setRefresh }) {
         </nav>
       </header>
 
+      {response && (
+        <div style={{background:"#131a26"}}>
+         <center>
+
+        <span className="welcome-title">
+          <span style={{ color: "white" }}>Welcome</span> {response?.name} ❤
+        </span>
+         </center>
+        </div>
+      )}
+
       {isLogout && (
-        <div className="logout-popup" style={{background:"#131a26"}}>
+        <div className="logout-popup" style={{ background: "#131a26" }}>
           <div>
             <p style={{ color: "white" }}>Are you sure Logout?</p>
             <button
@@ -121,7 +130,10 @@ function Header({ setRefresh }) {
       )}
 
       {isprofile && (
-        <div className="profile-edit-container" style={{background:"#131a26"}}>
+        <div
+          className="profile-edit-container"
+          style={{ background: "#131a26" }}
+        >
           <Upload fun={setRefresh} />
         </div>
       )}
