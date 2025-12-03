@@ -61,7 +61,7 @@ function Header({ setRefresh }) {
             </li>
             <li>
               <Link to="/member" className="nav-link">
-                join member
+                Reg member
               </Link>
             </li>
             <li
