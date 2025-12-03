@@ -130,9 +130,13 @@ function Header({ setRefresh }) {
           style={{ background: "#131a26" }}
         >
           <div>
-          <button  style={{ color: "red" ,background:"black"}} onClick={() => setIsUpload((e) => !e)}>close </button>
-          <Upload fun={setRefresh} />
-
+            <button
+              style={{ color: "red", background: "black" }}
+              onClick={() => setIsUpload((e) => !e)}
+            >
+              close{" "}
+            </button>
+            <Upload fun={setRefresh} />
           </div>
         </div>
       )}
@@ -157,7 +161,7 @@ function Header({ setRefresh }) {
                 }
                 alt="profile-img"
               />
-              <button>Remove Profile</button>
+              <button disable>Remove Profile</button>
               <button
                 onClick={() => {
                   setIsUpload(true);
