@@ -162,7 +162,7 @@ function Header({ setRefresh }) {
                 }
                 alt="profile-img"
               />
-              <button disabled>Remove Profile</button>
+            
               <button
                 onClick={() => {
                   setIsUpload(true);
