@@ -75,7 +75,7 @@ function HomePage() {
 
       <div className="home-container">
         <marquee behavior="alternate" direction="left">
-          <h1 className="today-birthday-heading">Today Birthday🎈</h1>
+          <p className="today-birthday-heading">Today Birthday🎈</p>
         </marquee>
         {isLoading && <Loader color="blue" />}
         {netErr === "neterr" && (
