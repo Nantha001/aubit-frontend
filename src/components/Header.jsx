@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import "../css/Header.css";
 import Upload from "../upload/Upload";
 
@@ -9,6 +9,7 @@ function Header({ setRefresh }) {
   const [isLogout, setIsLogout] = useState(false);
   const [profileView, setProfileView] = useState(false);
   const [isUpload, setIsUpload] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     async function fetchData() {
@@ -45,17 +46,17 @@ function Header({ setRefresh }) {
           <div></div>
 
           <ul className="nav-links">
-            <li>
+            <li className={"/home" == location.pathname ? "active" : ""}>
               <Link to="/home" className="nav-link">
                 Birthday 🎈
               </Link>
             </li>
-            <li>
+            <li className={"/upcoming" == location.pathname ? "active" : ""}>
               <Link to="/upcoming" className="nav-link">
                 Upcoming 🎂
               </Link>
             </li>
-            <li>
+            <li className={"/member" == location.pathname ? "active" : ""}>
               <Link to="/member" className="nav-link">
                 Reg member
               </Link>
@@ -152,7 +153,12 @@ function Header({ setRefresh }) {
         ) : (
           <div className="profile-view-container">
             <div className="profile-view-card">
-              <button onClick={()=>(setProfileView(e=>!e))} style={{color:"red"}}>X</button>
+              <button
+                onClick={() => setProfileView((e) => !e)}
+                style={{ color: "red" }}
+              >
+                X
+              </button>
               <img
                 className="profile-view"
                 src={
@@ -162,7 +168,7 @@ function Header({ setRefresh }) {
                 }
                 alt="profile-img"
               />
-            
+
               <button
                 onClick={() => {
                   setIsUpload(true);

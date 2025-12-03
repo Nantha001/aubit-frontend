@@ -108,6 +108,12 @@
 .edit-title {
   color: white;
 }
+.active{
+  border-bottom: 3px solid rgb(224, 203, 13);
+  border-bottom-right-radius: 50%;
+
+  
+}
 
 @media (max-width: 768px) {
   .header-nav {
