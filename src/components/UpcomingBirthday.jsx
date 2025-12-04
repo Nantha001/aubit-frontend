@@ -101,7 +101,7 @@ export default function UpcomingBirthday() {
           data.filter(
             (e) =>
               upCommmingBirthday(e.dob) && daysLeftThisMonth(e.dob) !== null
-          ).length === 0 && <NoUpcomingCard />}
+          ).length === 0 &&  netErr=="" && <NoUpcomingCard />}
         {!isLoading && (
           <div className="birthday-list">
             {data
