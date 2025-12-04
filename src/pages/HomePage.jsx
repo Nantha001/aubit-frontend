@@ -86,7 +86,7 @@ function HomePage() {
           </div>
         )}
         {!isLoading &&
-          data.filter((e) => isTodayBrthday(e.dob)).length === 0 && netErr==="" &&(
+          data.filter((e) => isTodayBrthday(e.dob)).length === 0 && netErr=="" &&(
             <NoBirthdayCard />
           )}
         {!isLoading && (
