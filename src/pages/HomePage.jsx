@@ -71,7 +71,7 @@ function HomePage() {
 
   return (
     <>
-      <Header  setRefresh={refreshFun} />
+      <Header setRefresh={refreshFun} />
 
       <div className="home-container">
         <marquee behavior="alternate" direction="left">
@@ -86,7 +86,7 @@ function HomePage() {
           </div>
         )}
         {!isLoading &&
-          data.filter((e) => isTodayBrthday(e.dob)).length === 0 && (
+          data.filter((e) => isTodayBrthday(e.dob)).length === 0 && netErr=="" &&(
             <NoBirthdayCard />
           )}
         {!isLoading && (
