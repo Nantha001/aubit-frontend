@@ -90,8 +90,13 @@
   justify-content: flex-end;
   background-color: #131a26;
 }
-.profile-view-card {
+.upload-profile-main-container {
+ 
+  padding: 20px;
+  background-color: #131a26;
+}
 
+.profile-view-card {
   width: 80%;
   max-width: 300px;
   padding: 20px;
@@ -100,7 +105,7 @@
 .dp-view {
   height: 280px;
   width: 280px;
- 
+
   margin: 5px;
   border-radius: 50%;
   object-fit: contain;
@@ -127,7 +132,7 @@
   color: red;
 }
 
-.photo-upload-btn{
+.photo-upload-btn {
   background-color: blue;
   color: white;
   padding: 5px 30px;

@@ -126,10 +126,12 @@ function Header({ setRefresh }) {
       )}
 
       {isUpload && (
+         <div className="upload-profile-main-container">
+
         <div
           className="profile-edit-container"
           style={{ background: "#131a26" }}
-        >
+          >
           <div>
             <button
               className="close-btn-upload"
@@ -140,6 +142,7 @@ function Header({ setRefresh }) {
             <Upload fun={setRefresh} setIsUpload={setIsUpload} />
           </div>
         </div>
+          </div>
       )}
 
       {profileView &&
@@ -155,7 +158,7 @@ function Header({ setRefresh }) {
             <div className="profile-view-card">
               <button
                 onClick={() => setProfileView((e) => !e)}
-               className="close-btn-profile"
+                className="close-btn-profile"
               >
                 ❌
               </button>
@@ -170,7 +173,7 @@ function Header({ setRefresh }) {
               />
 
               <button
-              className="photo-upload-btn"
+                className="photo-upload-btn"
                 onClick={() => {
                   setIsUpload(true);
                   setProfileView(false);
