@@ -25,11 +25,10 @@
   white-space: nowrap;
 }
 
-.welcome-title{
+.welcome-title {
   color: #4da3ff;
   font-weight: bold;
   font-size: 20px;
- 
 }
 
 .nav-links {
@@ -81,7 +80,7 @@
 .logout-popup div,
 .profile-edit-container div {
   margin-right: 20px;
-  border: 1px solid rgba(255, 233, 34, 0.411);
+
   padding: 10px;
   background: rgba(0, 0, 0, 0.4);
 }
@@ -92,27 +91,46 @@
   background-color: #131a26;
 }
 .profile-view-card {
+
   width: 80%;
   max-width: 300px;
+  padding: 20px;
+  margin-right: 20px;
 }
-.profile-view {
-  width: 90%;
-  height: 50%;
-  margin-top: 20px;
+.dp-view {
+  height: 280px;
+  width: 280px;
+ 
+  margin: 5px;
   border-radius: 50%;
- object-fit: contain;
- border: 2px solid gold;
- background-color: #406675;
+  object-fit: contain;
+  border: 2px solid gold;
+  background-color: #406675;
 }
 
 .edit-title {
   color: white;
 }
-.active{
+.active {
   border-bottom: 3px solid rgb(224, 203, 13);
   border-bottom-right-radius: 50%;
+}
 
-  
+.close-btn-upload {
+  background: transparent;
+  font-size: 15px;
+  color: red;
+}
+.close-btn-profile {
+  background: transparent;
+  font-size: 15px;
+  color: red;
+}
+
+.photo-upload-btn{
+  background-color: blue;
+  color: white;
+  padding: 5px 30px;
 }
 
 @media (max-width: 768px) {
