@@ -137,7 +137,7 @@ function Header({ setRefresh }) {
             >
               close{" "}
             </button>
-            <Upload fun={setRefresh} />
+            <Upload fun={setRefresh} setIsUpload={setIsUpload} />
           </div>
         </div>
       )}

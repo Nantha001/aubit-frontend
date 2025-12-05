@@ -15,31 +15,34 @@ export default function Upload({ fun, setIsUpload }) {
     setPreview(URL.createObjectURL(file));
   }
 
-  function handleUpload() {
-    setIsLoading(true);
-    const formData = new FormData();
-    formData.append("image", image);
+  async function handleUpload() {
+    try {
+      setIsLoading(true);
+      const formData = new FormData();
+      formData.append("image", image);
 
-    fetch("https://aubit-backend.onrender.com/upload", {
-      method: "POST",
-      headers: { Authorization: `Bearer ${localStorage.getItem("jwtToken")}` },
-      body: formData,
-    })
-      .then((res) => {
-        if (!res.ok) throw new Error("Server Error");
-        return res.json();
-      })
-      .then(() => {
-        setPopup("Uploaded ✔");
-        fun();
-        setIsLoading(false);
-        setIsUpload(false);
-      })
-      .catch(() => {
-        setPopup("Upload failed ❌");
-        setIsLoading(false);
-        setIsUpload(false);
+      const res = await fetch("https://aubit-backend.onrender.com/upload", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
+        },
+        body: formData,
       });
+
+      if (res.ok) {
+        // setPopup("Upload Success");
+        alert("Upload success 😎 ✔");
+        setIsLoading(false);
+        setIsUpload((e) => !e);
+        fun();
+      } else {
+        setIsLoading(false);
+        // setPopup("❌ Upload Failed Retry");
+        alert("❌ Upload Failed Retry ");
+      }
+    } catch (error) {
+      alert("Server Not Response 😴 TRY AGAIN");
+    }
   }
 
   return (
