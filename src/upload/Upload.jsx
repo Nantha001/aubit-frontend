@@ -59,7 +59,7 @@ export default function Upload({ fun, setIsUpload }) {
           <img src={preview} alt="preview" className="upload-preview" />
         )}
 
-        <button className="upload-btn" onClick={handleUpload}>
+        <button disabled={!image} className="upload-btn" onClick={handleUpload}>
           <center style={isLoading == true ? { color: "red" } : {}}>
             {isLoading ? "Loading...." : "Upload"}
           </center>
