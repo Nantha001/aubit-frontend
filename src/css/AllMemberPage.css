@@ -61,6 +61,16 @@
   margin-bottom: 3px;
 }
 
+.search-input{
+  padding: 10px;
+  font-size: 15px;
+  color: #4da3ff;
+ font-weight: bold;
+  border: 1px solid blue;
+  display: block;
+  margin-top: -70px;
+}
+
 
 @media (max-width: 768px) {
   .member-container {

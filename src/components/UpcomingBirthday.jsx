@@ -11,7 +11,8 @@ export default function UpcomingBirthday() {
   const [isLoading, setIsLoading] = useState(null);
   const [netErr, setNetErr] = useState("");
   const [popup, setPopup] = useState("");
-    const [refresh, setRefresh] = useState(false);
+  const [refresh, setRefresh] = useState(false);
+
   //calculation upcoming
 
   function upCommmingBirthday(dob) {
@@ -24,7 +25,7 @@ export default function UpcomingBirthday() {
     );
   }
 
-    //refresh
+  //refresh
   function refreshFun() {
     setRefresh((e) => !e);
   }
@@ -84,7 +85,7 @@ export default function UpcomingBirthday() {
 
   return (
     <>
-    <Header  setRefresh={refreshFun} />
+      <Header setRefresh={refreshFun} />
       <div style={{ background: "#131A26", minHeight: "100vh" }}>
         <marquee behavior="alternate" direction="left">
           <p style={{ color: "red" }}>Upcoming Birthday🎈</p>
@@ -97,11 +98,13 @@ export default function UpcomingBirthday() {
             </center>
           </div>
         )}
+      
         {!isLoading &&
           data.filter(
             (e) =>
               upCommmingBirthday(e.dob) && daysLeftThisMonth(e.dob) !== null
-          ).length === 0 &&  netErr=="" && <NoUpcomingCard />}
+          ).length === 0 &&
+          netErr == "" && <NoUpcomingCard />}
         {!isLoading && (
           <div className="birthday-list">
             {data
