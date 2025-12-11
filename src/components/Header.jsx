@@ -9,6 +9,7 @@ function Header({ setRefresh }) {
   const [isLogout, setIsLogout] = useState(false);
   const [profileView, setProfileView] = useState(false);
   const [isUpload, setIsUpload] = useState(false);
+  const [count, setCount] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -27,7 +28,7 @@ function Header({ setRefresh }) {
         const payLoad = JSON.parse(localStorage.getItem("payLoad"));
         const regNo = payLoad?.regNo;
         const user = data.data.find((e) => e.reg_number == regNo);
-
+        setCount(data.data.length);
         setResponse(user);
       }
     }
@@ -58,7 +59,7 @@ function Header({ setRefresh }) {
             </li>
             <li className={"/member" == location.pathname ? "active" : ""}>
               <Link to="/member" className="nav-link">
-                Reg member
+                Reg member <span style={{color:"yellow",}}> {count && count} </span>
               </Link>
             </li>
             <li
@@ -126,23 +127,22 @@ function Header({ setRefresh }) {
       )}
 
       {isUpload && (
-         <div className="upload-profile-main-container">
-
-        <div
-          className="profile-edit-container"
-          style={{ background: "#131a26" }}
+        <div className="upload-profile-main-container">
+          <div
+            className="profile-edit-container"
+            style={{ background: "#131a26" }}
           >
-          <div>
-            <button
-              className="close-btn-upload"
-              onClick={() => setIsUpload((e) => !e)}
-            >
-              ❌
-            </button>
-            <Upload fun={setRefresh} setIsUpload={setIsUpload} />
+            <div>
+              <button
+                className="close-btn-upload"
+                onClick={() => setIsUpload((e) => !e)}
+              >
+                ❌
+              </button>
+              <Upload fun={setRefresh} setIsUpload={setIsUpload} />
+            </div>
           </div>
         </div>
-          </div>
       )}
 
       {profileView &&
