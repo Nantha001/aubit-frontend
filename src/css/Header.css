@@ -116,9 +116,9 @@
   color: white;
 }
 .active {
-  border: 2px solid #22c55e;
+  border-bottom: 2px solid #22c55e;
   border-radius: 8px;
-  padding: 6px 12px;
+
 
   color: #22c55e;
 }
