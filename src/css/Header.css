@@ -91,7 +91,6 @@
   background-color: #131a26;
 }
 .upload-profile-main-container {
- 
   padding: 25px;
   background-color: #131a26;
 }
@@ -117,13 +116,11 @@
   color: white;
 }
 .active {
-  border: 3px solid rgb(39, 173, 21);
-  border-bottom-right-radius: 80%;
-  border-bottom-left-radius: 20%;
-  border-top-right-radius: 20%;
-  border-top-left-radius: 80%;
-  padding: 10px;
-  background-color: #000000;
+  border: 2px solid #22c55e;
+  border-radius: 8px;
+  padding: 6px 12px;
+
+  color: #22c55e;
 }
 
 .close-btn-upload {
