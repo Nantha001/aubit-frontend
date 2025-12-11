@@ -117,8 +117,13 @@
   color: white;
 }
 .active {
-  border-bottom: 3px solid rgb(224, 203, 13);
-  border-bottom-right-radius: 50%;
+  border: 3px solid rgb(39, 173, 21);
+  border-bottom-right-radius: 80%;
+  border-bottom-left-radius: 20%;
+  border-top-right-radius: 20%;
+  border-top-left-radius: 80%;
+  padding: 10px;
+  background-color: #000000;
 }
 
 .close-btn-upload {
