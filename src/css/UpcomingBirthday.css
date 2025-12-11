@@ -1,7 +1,7 @@
 .birthday-list {
   display: flex;
-
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  padding: 20px;
 }

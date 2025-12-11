@@ -1,19 +1,18 @@
-
 .page-bg {
   background: #131a26;
   min-height: 100vh;
   width: 100%;
-  padding-top: 80px; 
+  padding-top: 80px;
 }
 
 .member-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;       
+  gap: 14px;
   justify-content: center;
   padding: 20px;
+ 
 }
-
 
 .member-card {
   background: #1e2735;
@@ -24,28 +23,25 @@
   box-shadow: 0 3px 12px rgba(255, 255, 255, 0.07);
   transition: 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  width: auto;
 
-  width: auto;          
-  max-width: 420px;    
+  max-width: 420px;
 }
-
 
 .member-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.4);
 }
 
-
 .member-img {
-  width: 100%;      
-  height: auto;       
+  width: 100%;
+  height: auto;
   object-fit: contain;
   border-radius: 10px;
   background: white;
   border: 2px solid #4da3ff;
   margin-bottom: 12px;
 }
-
 
 .member-name {
   font-size: 20px;
@@ -61,16 +57,15 @@
   margin-bottom: 3px;
 }
 
-.search-input{
+.search-input {
   padding: 10px;
   font-size: 15px;
   color: #4da3ff;
- font-weight: bold;
+  font-weight: bold;
   border: 1px solid blue;
   display: block;
   margin-top: -70px;
 }
-
 
 @media (max-width: 768px) {
   .member-container {

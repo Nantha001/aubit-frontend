@@ -121,7 +121,7 @@ export default function UpcomingBirthday() {
                   e.profile_photo == "null" ? genderImg : e.profile_photo;
                 return (
                   <>
-                    <div key={i}>
+                    <div className="upcoming-card" key={i}>
                       <UpcomingCard
                         name={e.name}
                         dob={e.dob}

@@ -1,19 +1,17 @@
 
 .upcoming-card {
-  width: auto;
-  max-width: 420px;         
   background: #1e2735;
-  padding: 18px;
-  border-radius: 18px;
-  margin: 20px auto;
+  border-radius: 14px;
+  padding: 14px;
   text-align: center;
-
+  color: #ffffff;
   box-shadow: 0 3px 12px rgba(255, 255, 255, 0.07);
   transition: 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.05);
 
-  transition: 0.3s ease;
-  animation: fadeIn 0.5s ease-in-out;
+  width: auto;     
+   
+  max-width: 420px; 
 
   
 }
@@ -25,10 +23,10 @@
 
 
 .upcoming-img {
-  width: 100%;            
-  height: auto;             
+  width: 100%;
+  height: auto;
   object-fit: contain;
-  border-radius: 12px;       
+  border-radius: 10px;
   background: white;
   border: 2px solid #4da3ff;
   margin-bottom: 12px;
