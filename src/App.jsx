@@ -10,20 +10,24 @@ import AllMemberPage from "./pages/AllMemberPage";
 export default function App() {
   return (
     <>
-      <Routes>
-        
-        <Route path="/" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/home" element={<ProtectedRoutes page={<HomePage />} />} />
-        <Route
-          path="/upcoming"
-          element={<ProtectedRoutes page={<UpcomingBirthday />} />}
-        />
-        <Route
-          path="/member"
-          element={<ProtectedRoutes page={<AllMemberPage />} />}
-        />
-      </Routes>
+
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route
+            path="/home"
+            element={<ProtectedRoutes page={<HomePage />} />}
+          />
+          <Route
+            path="/upcoming"
+            element={<ProtectedRoutes page={<UpcomingBirthday />} />}
+          />
+          <Route
+            path="/member"
+            element={<ProtectedRoutes page={<AllMemberPage />} />}
+          />
+        </Routes>
+
     </>
   );
 }
