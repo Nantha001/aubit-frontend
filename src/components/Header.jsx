@@ -3,7 +3,7 @@ import { useNavigate, Link, useLocation } from "react-router-dom";
 import "../css/Header.css";
 import Upload from "../upload/Upload";
 
-function Header({ setRefresh }) {
+function Header({ setRefresh ,refresh}) {
   const navigation = useNavigate();
   const [response, setResponse] = useState("");
   const [isLogout, setIsLogout] = useState(false);
@@ -33,7 +33,7 @@ function Header({ setRefresh }) {
       }
     }
     fetchData();
-  }, [setRefresh]);
+  }, [refresh]);
 
   const DefaultImg =
     response?.gender === "male"

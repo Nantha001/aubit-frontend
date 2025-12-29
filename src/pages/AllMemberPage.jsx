@@ -60,7 +60,7 @@ function AllMemberPage() {
 
   return (
     <>
-      <Header setRefresh={refreshFun} />
+      <Header setRefresh={refreshFun} refresh={refresh}/>
       <div className="page-bg">
         {neterr === "neterr" && (
           <div>

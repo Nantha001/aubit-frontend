@@ -71,7 +71,7 @@ function HomePage() {
 
   return (
     <>
-      <Header setRefresh={refreshFun} />
+      <Header setRefresh={refreshFun} refresh={refresh}/>
 
       <div className="home-container">
         <marquee behavior="alternate" direction="left">

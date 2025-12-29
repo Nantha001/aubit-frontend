@@ -85,7 +85,7 @@ export default function UpcomingBirthday() {
 
   return (
     <>
-      <Header setRefresh={refreshFun} />
+      <Header setRefresh={refreshFun} refresh={refresh}/>
       <div style={{ background: "#131A26", minHeight: "100vh" }}>
         <marquee behavior="alternate" direction="left">
           <p style={{ color: "red" }}>Upcoming Birthday🎈</p>
