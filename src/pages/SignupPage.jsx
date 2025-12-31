@@ -61,13 +61,7 @@ function SignupPage() {
     } else if (registerInput === "") {
       setErr((pre) => ({ ...pre, regErr: "Enter register number" }));
       return;
-    } else if (!String(registerInput).startsWith("810020")) {
-      setErr((pre) => ({
-        ...pre,
-        regErr: "Register number must start with 810020",
-      }));
-      return;
-    } else if (dateInput === "") {
+    }  else if (dateInput === "") {
       setErr((pre) => ({ ...pre, dateErr: "select date of birth" }));
       return;
     } else if (genderInput === "") {
