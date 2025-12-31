@@ -33,7 +33,7 @@ function HomePage() {
     async function fetchData() {
       try {
         setIsLoading(true);
-        const apiUrl = "https://aubit-backend.onrender.com/userdata";
+        const apiUrl = "https://aubit-backend-24ns.onrender.com/userdata";
         const option = {
           method: "GET",
           headers: {
