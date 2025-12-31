@@ -14,6 +14,7 @@ function LoginPage() {
   const [popup, setPopup] = useState("");
   const [err, setErr] = useState({ regErr: "", passwordErr: "" });
   const navigation = useNavigate();
+  const [loading,setLoading]=useState(false)
 
   useEffect(() => {
     const token = localStorage.getItem("jwtToken");
@@ -23,6 +24,7 @@ function LoginPage() {
     }
 
     if (token) {
+      setLoading(false)
       const time = setTimeout(() => {
         navigation("/home", { replace: true });
         setPopup("");
@@ -35,6 +37,7 @@ function LoginPage() {
   useEffect(() => {
     const token = localStorage.getItem("jwtToken");
     if (token && !popup) {
+      setLoading(false)
       navigation("/home", { replace: true });
     }
   }, []);
@@ -42,15 +45,19 @@ function LoginPage() {
   //login
   async function handleLogin(e) {
     e.preventDefault();
+    setLoading(true)
 
     setErr({ regErr: "", passwordErr: "" });
     if (!registerInput) {
       setErr((pre) => ({ ...pre, regErr: "Enter the Register Number" }));
+      setLoading(false)
       return;
     } else if (!password) {
       setErr((pre) => ({ ...pre, passwordErr: "Enter the Password" }));
+      setLoading(false)
       return;
     }
+    setLoading(true)
     const apiUrl = "https://aubit-backend-24ns.onrender.com/login";
     const body = { regNo: registerInput, password: password };
     const option = {
@@ -67,12 +74,14 @@ function LoginPage() {
             ...pre,
             regErr: data.message || "Invaild User ID",
           }));
+          setLoading(false)
           return;
         } else if (data.message.includes("Password")) {
           setErr((pre) => ({
             ...pre,
             passwordErr: data.message || "Invaild password",
           }));
+          setLoading(false)
           return;
         }
       }
@@ -82,6 +91,7 @@ function LoginPage() {
         if (token) {
           localStorage.setItem("jwtToken", token);
           setPopup(data.message);
+          setLoading(false)
         }
       }
     }
@@ -132,7 +142,7 @@ function LoginPage() {
         )}
 
         <button type="submit" className="login-btn">
-          Login
+          {loading?"...Loading⌛":"Login"}
         </button>
       </form>
       {popup !== "" && (

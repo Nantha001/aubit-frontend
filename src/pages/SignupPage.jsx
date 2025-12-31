@@ -28,6 +28,7 @@ function SignupPage() {
     sectionErr: "",
     passwordErr: "",
   });
+  const [Loading,setLoading]=useState(false)
 
   // popup then go
   useEffect(() => {
@@ -45,6 +46,7 @@ function SignupPage() {
 
   async function handleSignup(e) {
     e.preventDefault();
+    setLoading(true)
     setErr({
       nameErr: "",
       regErr: "",
@@ -57,27 +59,34 @@ function SignupPage() {
 
     if (nameInput === "") {
       setErr((pre) => ({ ...pre, nameErr: "Enter your name" }));
+      setLoading(false)
       return;
     } else if (registerInput === "") {
       setErr((pre) => ({ ...pre, regErr: "Enter register number" }));
+      setLoading(false)
       return;
     }  else if (dateInput === "") {
       setErr((pre) => ({ ...pre, dateErr: "select date of birth" }));
+      setLoading(false)
       return;
     } else if (genderInput === "") {
       setErr((pre) => ({ ...pre, genderErr: "Select gender" }));
+      setLoading(false)
       return;
     } else if (sectionInput === "") {
       setErr((pre) => ({ ...pre, sectionErr: "Select section" }));
+      setLoading(false)
       return;
     } else if (emailInput === "") {
       setErr((pre) => ({ ...pre, emailErr: "Enter the email" }));
+      setLoading(false)
       return;
     } else if (passwordInput === "" || confirmPasswordInput === "") {
       setErr((pre) => ({
         ...pre,
         passwordErr: "Enter password and confirm password",
       }));
+      setLoading(false)
       return;
     }
 
@@ -86,6 +95,7 @@ function SignupPage() {
         ...pre,
         passwordErr: "Password must be at least 6 characters",
       }));
+      setLoading(false)
       return;
     }
 
@@ -94,8 +104,10 @@ function SignupPage() {
         ...pre,
         passwordErr: "Password and confirm password not match",
       }));
+      setLoading(false)
       return;
     }
+    setLoading(true)
     const body = {
       name: nameInput,
       regNo: registerInput,
@@ -118,15 +130,16 @@ function SignupPage() {
       if (data?.message) {
         if (data.message.includes("Email")) {
           setErr((pre) => ({ ...pre, emailErr: data.message }));
-
+         setLoading(false)
           return;
         } else if (data.message.includes("Register")) {
           setErr((pre) => ({ ...pre, regErr: data.message }));
-
+          setLoading(false)
           return;
         }
         if (data.message.includes("Success")) {
           setPop(data.message);
+          setLoading(false)
           return;
         }
       }
@@ -315,7 +328,7 @@ function SignupPage() {
         )}
         <div>
           <button type="submit" className="signup-btn">
-            Sign Up
+           {Loading?"..loading⌛":"Sign Up"}
           </button>
         </div>
       </form>
