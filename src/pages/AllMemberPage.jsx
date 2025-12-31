@@ -16,7 +16,7 @@ function AllMemberPage() {
     async function fetchData() {
       try {
         setIsLoading(true);
-        const apiUrl = "https://aubit-backend.onrender-24ns.com/userdata";
+        const apiUrl = "https://aubit-backend.onrender.com/userdata";
         const option = {
           method: "GET",
           headers: {
