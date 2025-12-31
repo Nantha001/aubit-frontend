@@ -14,12 +14,15 @@ function BirthdayCard({ name, image }) {
     <div className="birthday-card">
       <img src={image} className="birthday-img" alt="profile" />
 
-      <h1 className="birthday-heading">HAPPY BIRTHDAY 🎂</h1>
-
       <p className="birthday-name">
         {name[0].toUpperCase() + name.slice(1).toLowerCase()}{" "}
       </p>
-      <p style={{ fontStyle: "italic", color: "blue" }}>{randomWish}</p>
+      <h1
+        className="birthday-heading"
+        style={{ fontStyle: "italic" }}
+      >
+        {randomWish}
+      </h1>
     </div>
   );
 }
