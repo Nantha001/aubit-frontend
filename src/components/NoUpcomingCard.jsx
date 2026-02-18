@@ -7,13 +7,12 @@ function NoUpcomingCard() {
   <div className="no-up-wrapper">
       <div className="no-up-card">
         <img
-          src="https://cdn-icons-png.flaticon.com/512/1827/1827415.png"
+          src="https://res.cloudinary.com/dvkq1wvmz/image/upload/v1771456505/file_0000000007a4720684ed981858e5184b_fkpnin.jpg"
           alt="no upcoming"
           className="no-up-icon"
         />
 
-        <h2 className="no-up-title">No Upcoming Birthdays</h2>
-        <p className="no-up-text">This Month</p>
+      
       </div>
     </div>
   )
