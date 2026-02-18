@@ -7,15 +7,14 @@ function NoBirthdayCard() {
     <div className="no-bday-wrapper">
       <div className="no-bday-card">
         <img
-          src="https://cdn-icons-png.flaticon.com/512/747/747376.png"
+          src="https://res.cloudinary.com/dvkq1wvmz/image/upload/v1771456505/file_00000000b0847206bbe2436c5a491dc_yeswt3.jpg"
           alt="no birthday"
           className="no-bday-icon"
         />
 
-        <h2 className="no-bday-title">No Birthdays Today</h2>
-        <p className="no-bday-text">Check out the upcoming birthdays below!</p>
+    
         <Link to="/upcoming">
-        <button style={{color:"yellow",background:"black"}}>Upcoming Birthday</button>
+        <button style={{color:"yellow",background:"black"}}>Upcoming Birthday Page</button>
         </Link>
       </div>
     </div>
