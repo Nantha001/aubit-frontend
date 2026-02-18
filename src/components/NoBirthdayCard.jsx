@@ -14,7 +14,7 @@ function NoBirthdayCard() {
 
     
         <Link to="/upcoming">
-        <button style={{color:"yellow",background:"black"}}>Upcoming Birthday Page</button>
+        <button style={{color:"white",background:"black", padding:"8px 14px"}}>Upcoming Birthday Page Go 🎂</button>
         </Link>
       </div>
     </div>
