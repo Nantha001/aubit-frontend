@@ -18,7 +18,8 @@
 }
 
 .no-bday-icon {
-  width: 90px;
+  width: 100%;
+  height:auto;
   opacity: 0.9;
   margin-bottom: 15px;
 }
