@@ -11,7 +11,6 @@ function NoBirthdayCard() {
           alt="no birthday"
           className="no-bday-icon"
         />
-
     
         <Link to="/upcoming">
         <button style={{color:"white",background:"black", padding:"8px 14px"}}>Upcoming Birthday Page Go 🎂</button>
